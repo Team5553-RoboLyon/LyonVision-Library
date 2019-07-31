@@ -10,6 +10,7 @@
   - Un seul objet à créer
 */
 
+namespace lyonlib {
 class MjpegStream {
  public:
   /*
@@ -32,3 +33,4 @@ class MjpegStream {
   cs::CvSource    m_streamSrc;
   cs::MjpegServer m_streamServer;
 };
+}  // namespace lyonlib

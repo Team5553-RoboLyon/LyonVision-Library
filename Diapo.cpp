@@ -1,6 +1,8 @@
 #include "lib/Diapo.h"
 #include <opencv2/videoio.hpp>
 
+using namespace lyonlib;
+
 Diapo::Diapo(std::string foldername, std::string extention) {
   // Pattern pour trouver les images (le char '*' remplace n'importe quel nom de fichier)
   std::string pattern = checkFolderName(foldername) + "*" + checkExtension(extention);

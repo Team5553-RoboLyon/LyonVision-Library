@@ -2,6 +2,8 @@
 #include <cameraserver/CameraServer.h>
 #include <iostream>
 
+using namespace lyonlib;
+
 MjpegStream::MjpegStream(const std::string name, int width, int height, int fps) {
   m_streamSrc    = cs::CvSource(name, cs::VideoMode::PixelFormat::kUnknown, width, height, fps);
   m_streamServer = frc::CameraServer::GetInstance()->StartAutomaticCapture(m_streamSrc);

@@ -8,7 +8,7 @@
   Classe pour lire une à une les images d'un dossier
   Exemple, faire défiler les images en appuyant sur le clavier :
 
-    Diapo my_diapo("directory/folder/", ".jpg");
+    lyonlib::Diapo my_diapo("directory/folder/", ".jpg");
     cv::Mat img;
     while (true) {
       my_diapo.read(img);
@@ -17,6 +17,7 @@
     }
 */
 
+namespace lyonlib {
 class Diapo {
  public:
   /*
@@ -56,3 +57,4 @@ class Diapo {
   // Compteur pour "naviguer" à travers les images
   int m_iterator;
 };
+}  // namespace lyon
