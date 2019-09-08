@@ -21,6 +21,10 @@ bool Diapo::GrabFrame(cv::OutputArray image) {
   return capture.read(image);
 }
 
+bool Diapo::read(cv::OutputArray image) {
+  return GrabFrame(image);
+}
+
 void Diapo::incrementation() {
   m_iterator++;
   if (m_iterator >= m_nombreDePhotos) {

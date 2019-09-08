@@ -4,28 +4,34 @@
 #include <opencv2/core/mat.hpp>
 #include <string>
 
-/*
-  Classe pour créer un stream video facilement
-  - Possibilité de connaître l'url du stream
-  - Un seul objet à créer
-*/
-
 namespace lyonlib {
+
+/*
+ * Classe pour créer un stream video facilement
+ * - Possibilité de connaître l'url du stream
+ * - Un seul objet à créer
+ */
 class MjpegStream {
  public:
   /*
-    name : nom du stream
-    width, height et fps : parametres du stream
+    @param name stream name
+    @param width stream width
+    @param height stream height
+    @param fps stream fps
   */
   MjpegStream(const std::string name, int width, int height, int fps);
 
   /*
-    Put a new frame to the stream
-  */
-  void PutFrame(cv::Mat frame);
+   * Put a new frame to the stream
+   *
+   * @param frame the image to be displayed
+   */
+  void PutFrame(cv::Mat &frame);
 
   /*
-    Return stream url : "mjpg:http://<hostname>.local:<port>/?action=stream"
+    Get stream url at the format: "mjpg:http://<hostname>.local:<port>/?action=stream"
+
+    @return stream url
   */
   std::string GetStreamAddress();
 
@@ -33,4 +39,5 @@ class MjpegStream {
   cs::CvSource    m_streamSrc;
   cs::MjpegServer m_streamServer;
 };
+
 }  // namespace lyonlib

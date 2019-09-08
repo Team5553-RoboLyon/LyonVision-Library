@@ -11,7 +11,7 @@ MjpegStream::MjpegStream(const std::string name, int width, int height, int fps)
   std::cout << "Mjpeg Stream created at : " << GetStreamAddress() << std::endl;
 }
 
-void MjpegStream::PutFrame(cv::Mat frame) {
+void MjpegStream::PutFrame(cv::Mat &frame) {
   m_streamSrc.PutFrame(frame);
 }
 
