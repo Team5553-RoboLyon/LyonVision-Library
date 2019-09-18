@@ -16,6 +16,6 @@ void MjpegStream::PutFrame(cv::Mat &frame) {
 }
 
 std::string MjpegStream::GetStreamAddress() {
-  return "mjpg:http://" + cs::GetHostname() + ".local:" + std::to_string(m_streamServer.GetPort()) +
+  return "http://" + cs::GetHostname() + ".local:" + std::to_string(m_streamServer.GetPort()) +
          "/?action=stream";
 }
