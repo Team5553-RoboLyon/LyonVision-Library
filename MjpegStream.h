@@ -1,6 +1,8 @@
 #pragma once
 
 #include <cscore.h>
+#include <cscore_cv.h>
+
 #include <opencv2/core/mat.hpp>
 #include <string>
 
